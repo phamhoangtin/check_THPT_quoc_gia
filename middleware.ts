@@ -1,9 +1,12 @@
 // import { updateSession } from "@/lib/supabase/middleware";
-// import { type NextRequest } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 
-// export async function middleware(request: NextRequest) {
-//   return await updateSession(request);
-// }
+export async function middleware(request: NextRequest) {
+    // Uncomment the line below to enable session updates
+    // await updateSession(request);
+    console.log("Middleware executed for request:", request.nextUrl.pathname);
+    return NextResponse.next();
+}
 
 // export const config = {
 //   matcher: [
